@@ -1,0 +1,75 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+*.ipynb_checkpoints
+
+# Environment folders
+.env
+.venv/
+venv/
+ENV/
+env.bak/
+env/
+
+# VSCode settings
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Logs and local databases
+*.log
+*.sqlite3
+
+# Model files and artifacts
+*.h5
+*.keras
+*.pkl
+*.gz
+
+# Docker-related
+*.pid
+*.sock
+
+# Python pip logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Pytest
+.pytest_cache/
+.cache/
+
+# Packaging and build
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+*.cover
+
+# Virtualenv metadata
+*.env
+*.venv
+ENV/
+env/
+venv/
