@@ -1,8 +1,10 @@
-Flask==2.3.2
-flasgger==0.9.7.1
-pandas==2.2.2
-numpy
+dash
+dash-bootstrap-components
+Flask
 yfinance
+requests
+plotly
+pandas
+numpy
+scikit-learn
 tensorflow
-scikit-learn==1.4.2
-joblib==1.4.0
