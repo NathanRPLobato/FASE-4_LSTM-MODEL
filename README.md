@@ -1,73 +1,57 @@
-# Previsão de Preço de Ações com LSTM
-
+Previsão de Preço de Ações com LSTM
 Projeto que combina inteligência artificial e visualização interativa para prever preços de ações em tempo real. Utiliza um modelo LSTM treinado, disponibilizado via API REST Flask, e uma interface web com Dash para consulta e análise das previsões.
 
----
-
-## 📂 Estrutura do Projeto
-
+📂 Estrutura do Projeto
 /app
-├─ app.py # Backend Flask da API REST
-├─ models/
-│ └─ lstm_model.h5 # Modelo LSTM treinado
-└─ data/ # Dados financeiros para avaliação local
+ ├─ app.py # Backend Flask da API REST
+ ├─ models/
+  └─ lstm_model.h5 # Modelo LSTM treinado
+ └─ data/ # Dados financeiros para avaliação local
 
 /webapp
-└─ webdash.py # Aplicação Dash para interface gráfica
+ └─ webdash.py # Aplicação Dash para interface gráfica
 
-yaml
+⚙️ Pré-requisitos
+Python 3.8 ou superior
 
----
+pip
 
-## ⚙️ Pré-requisitos
+Opcional: Docker e Docker Compose (para ambiente containerizado)
 
-- Python 3.8 ou superior  
-- pip  
-- Opcional: Docker e Docker Compose (para ambiente containerizado)
+🚀 Como executar localmente
+Clone o repositório:
+git clone https://seu-repositorio.git
+cd seu-repositorio
 
----
-
-## 🚀 Como executar localmente
-
-1. Clone o repositório:
-
-   ```bash
-   git clone https://seu-repositorio.git
-   cd seu-repositorio
 Crie e ative um ambiente virtual:
-
-bash
 python -m venv venv
 
-# Windows
+No Windows:
 venv\Scripts\activate
 
-# Linux/Mac
+No Linux/Mac:
 source venv/bin/activate
+
 Instale as dependências:
-
-bash
 pip install -r requirements.txt
+
 Inicie a API Flask:
-
-bash
 python app/app.py
+
 Em outro terminal, rode a aplicação Dash:
-
-bash
 python webapp/webdash.py
-Acesse a interface no navegador:
 
+Acesse a interface no navegador:
 http://localhost:8050
+
 🔗 Endpoints da API
 POST /predict
 
 Payload JSON:
-
-json
 {
-  "ticker": "PETR4.SA"
+  "ticker": "PETR4.SA"
 }
+
 Resposta: Previsão do preço de fechamento para o ticker informado.
 
 🖥️ Uso do WebDash
@@ -87,9 +71,8 @@ Visualize o gráfico com histórico e previsão de preços.
 
 🐳 Executando via Docker
 Utilize o arquivo docker-compose.yml para rodar ambos os serviços:
-
-bash
 docker-compose up --build
+
 Após a inicialização, acesse:
 
 API: http://localhost:5000
