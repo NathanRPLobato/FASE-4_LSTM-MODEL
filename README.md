@@ -1,104 +1,148 @@
-Previsão de Preço de Ações com LSTM
-Projeto que combina inteligência artificial e visualização interativa para prever preços de ações em tempo real. Utiliza um modelo LSTM treinado, disponibilizado via API REST Flask, e uma interface web com Dash para consulta e análise das previsões.
+# 📈 Previsão de Preço de Ações com LSTM
 
-📂 Estrutura do Projeto
+Projeto que une inteligência artificial e visualização interativa para prever preços de ações em tempo real. Utiliza modelo LSTM via API REST Flask e interface web Dash para consulta e análise das previsões.
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
 /app
- ├─ app.py # Backend Flask da API REST
- ├─ models/
-  └─ lstm_model.h5 # Modelo LSTM treinado
- └─ data/ # Dados financeiros para avaliação local
+  ├── app.py              # Backend Flask da API REST
+  ├── models/
+  │     └── lstm_model.h5 # Modelo LSTM treinado
+  └── data/               # Dados financeiros para avaliação local
 
 /webapp
- └─ webdash.py # Aplicação Dash para interface gráfica
+  └── webdash.py          # Aplicação Dash para interface gráfica
+```
+---
 
-⚙️ Pré-requisitos
-Python 3.8 ou superior
+## ⚙️ Pré-requisitos
 
-pip
+- Python 3.8+  
+- pip  
+- (Opcional) Docker e Docker Compose
 
-Opcional: Docker e Docker Compose (para ambiente containerizado)
+---
 
-🚀 Como executar localmente
-Clone o repositório:
-git clone https://seu-repositorio.git
-cd seu-repositorio
+## 🚀 Execução Local
 
-Crie e ative um ambiente virtual:
-python -m venv venv
+1. Clone o repositório e acesse a pasta:
 
-No Windows:
-venv\Scripts\activate
+   ```bash
+   git clone https://seu-repositorio.git
+   cd seu-repositorio
+   ```
 
-No Linux/Mac:
-source venv/bin/activate
+2. Crie e ative o ambiente virtual:
 
-Instale as dependências:
-pip install -r requirements.txt
+   ```bash
+   python -m venv venv
 
-Inicie a API Flask:
-python app/app.py
+   # Windows
+   venv\Scripts\activate
 
-Em outro terminal, rode a aplicação Dash:
-python webapp/webdash.py
+   # Linux / macOS
+   source venv/bin/activate
+   ```
 
-Acesse a interface no navegador:
-http://localhost:8050
+3. Instale as dependências:
 
-🔗 Endpoints da API
-POST /predict
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Payload JSON:
+4. Execute a API Flask:
+
+   ```bash
+   python app/app.py
+   ```
+
+5. Em outro terminal, inicie a aplicação Dash:
+
+   ```bash
+   python webapp/webdash.py
+   ```
+
+6. Acesse a aplicação no navegador:
+
+   ```
+   http://localhost:8050
+   ```
+
+---
+
+## 🔗 API REST
+
+**Endpoint:** `POST /predict`
+
+**Payload JSON:**
+
+```json
 {
-  "ticker": "PETR4.SA"
+  "ticker": "PETR4.SA"
 }
+```
 
-Resposta: Previsão do preço de fechamento para o ticker informado.
+**Retorno:** Previsão do preço de fechamento para o ticker informado.
 
-🖥️ Uso do WebDash
-Insira o ticker da ação no campo de texto (exemplo: PETR4.SA).
+---
 
-Clique em Prever.
+## 🖥️ Uso do WebDash
 
-Veja:
+- Insira o ticker da ação (exemplo: `PETR4.SA`)  
+- Clique em **Prever**  
+- Visualize:  
+  - Previsão do preço  
+  - Métricas do modelo (MAE e RMSE)  
+  - Tempo de resposta da API  
+- Veja o gráfico com histórico e previsão de preços
 
-Previsão do preço de fechamento.
+---
 
-Métricas do modelo (MAE e RMSE).
+## 🐳 Executando com Docker
 
-Tempo de resposta da API.
+Para rodar API e WebDash via Docker Compose:
 
-Visualize o gráfico com histórico e previsão de preços.
-
-🐳 Executando via Docker
-Utilize o arquivo docker-compose.yml para rodar ambos os serviços:
+```bash
 docker-compose up --build
+```
 
-Após a inicialização, acesse:
+Acesse após iniciar:  
 
-API: http://localhost:5000
+- API: `http://localhost:5000`  
+- WebDash: `http://localhost:8050`
 
-WebDash: http://localhost:8050
+---
 
-📊 Métricas do Modelo
-MAE (Erro Absoluto Médio)
+## 📊 Métricas do Modelo
 
-RMSE (Raiz do Erro Quadrático Médio)
+- **MAE** (Erro Absoluto Médio)  
+- **RMSE** (Raiz do Erro Quadrático Médio)  
 
-Essas métricas avaliam a precisão da previsão do modelo.
+Indicadores da qualidade das previsões.
 
-⚠️ Considerações Importantes
-O modelo foi treinado com dados históricos até uma data fixa.
+---
 
-Previsões futuras podem variar conforme condições reais do mercado.
+## ⚠️ Avisos Importantes
 
-Tickers com dados insuficientes retornam erro.
+- Modelo treinado com dados históricos até uma data fixa  
+- Previsões futuras podem variar conforme o mercado  
+- Tickers com dados insuficientes retornam erro
 
-📞 Contato
-Nathan Rafael Pedroso Lobato
-E-mail: nathan.lobato@outlook.com.br
+---
 
-André Vicente Torres Martins
-E-mail: andrasno@gmail.com
+## 📞 Contato
 
-📄 Licença
-Este projeto está licenciado sob a Licença MIT, permitindo uso, modificação e distribuição livre.
+**Nathan Rafael Pedroso Lobato**  
+✉️ nathan.lobato@outlook.com.br
+
+**André Vicente Torres Martins**  
+✉️ andrasno@gmail.com
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença **MIT** — livre para uso, modificação e distribuição.
