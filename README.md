@@ -31,8 +31,8 @@ Projeto que une inteligência artificial e visualização interativa para prever
 1. Clone o repositório e acesse a pasta:
 
    ```bash
-   git clone https://seu-repositorio.git
-   cd seu-repositorio
+   git clone https://github.com/NathanRPLobato/FASE-4_LSTM-MODEL
+   cd SEU-REPOSITORIO
    ```
 
 2. Crie e ative o ambiente virtual:
