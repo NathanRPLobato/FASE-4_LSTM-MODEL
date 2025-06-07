@@ -12,7 +12,7 @@ from prepare_data import prepare_data
 app = Flask(__name__)
 
 model = load_model("app/models/lstm_model.h5")
-SEQ_LEN = 60
+SEQ_LEN = 120
 CSV_PATH = "app/data/finance_data.csv"
 SCALER_PATH = "app/models/scaler.gz"
 
